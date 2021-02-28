@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prebuild": "npm run test",
     "start": "ng serve",
     "build": "ng build",
     "test": "tsc -noEmit && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "generateApi": "ng lint"
+    "generate:api": "openapi-generator-cli generate -g typescript-angular -i api/prx-api.yaml -o api/client-lib --additional-properties=npmName=prx-client-lib",
+    "build:api": "(cd api/client-lib && npm install); && npm run build",
+    "publish:api": "cd api/client-lib/dist && npm publish"
   },
   "private": true,
   "dependencies": {

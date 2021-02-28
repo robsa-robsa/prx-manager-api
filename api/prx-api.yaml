@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   description: "Eine kleine Demo für ein mini projektmanaagement"
-  version: "1.0.0"
-  title: "Project Viewer Petstore"
+  version: "1.0.1"
+  title: "Project Viewer"
   contact:
     email: "robin.seifert@web.de"
 basePath: "/api/v1"
@@ -34,14 +34,12 @@ paths:
         "204":
           description: "success"
           schema:
-            $ref: "#/definitions/ProjectList"
+            $ref: "#/definitions/Project"
     get:
       tags:
       - "demo"
       description: "list all projects"
       operationId: "listProjects"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       responses:
@@ -64,7 +62,6 @@ paths:
       operationId: "getProject"
       produces:
       - "application/json"
-     
       responses:
         "200":
           description: "success"
@@ -97,6 +94,8 @@ paths:
       operationId: "addAction"
       consumes:
       - "application/json"
+      produces:
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -105,13 +104,17 @@ paths:
         schema:
           $ref: "#/definitions/Action"
       responses:
-        "204":
+        "200":
           description: "successful operation"
+          schema:
+            $ref: "#/definitions/Action"
     get:
       tags:
       - "demo"
       description: "all actions of a project"
       operationId: "listActions"
+      produces:
+      - "application/json"
       responses:
         "200":
           description: "successful operation"
@@ -135,6 +138,7 @@ definitions:
       projectId:
         type: "integer"
         format: "int64"
+        readOnly: true
       efford:
         type: "number"
         description: "hours of work"

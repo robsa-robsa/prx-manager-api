@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/api/client-lib
 /tmp
 /out-tsc
 # Only exists if Bazel was run
