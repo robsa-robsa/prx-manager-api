@@ -8,6 +8,16 @@ Install yarn (optional):
 Install angular cli:
 ` npm install -g @angular/cli `
 
+Generate api-lib dependency:
+` npm generate:api `
+` npm build:api `
+
+next release can use npm-repository with: ` npm publish:api `
+
+
+Install all dependencies:
+` npm install `
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
 
 ## Development server

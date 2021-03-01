@@ -1,0 +1,30 @@
+<div *ngIf="newAction">
+    <action-add (choosen)="finishAddAction($event)"></action-add>
+</div>
+
+<div *ngIf="!newAction">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Effort</th>
+                <th scope="col">Members</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="actions$ | async as actions">
+            <tr *ngFor="let action of actions.list;  index as i;">
+                <th scope="row">{{i+1}}</th>
+                <td>{{action.name}}</td>
+                <td>{{action.efford}}</td>
+                <td>{{action.members}}</td>
+                <td>{{action.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="nav-link btn btn-outline-success my-2 my-sm-0" href="#" (click)="addAction()">
+        <i class="fa fa-plus-circle"></i>Add <span>Action</span>
+    </a>
+</div>

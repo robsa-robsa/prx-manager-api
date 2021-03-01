@@ -1,0 +1,13 @@
+<li class="nav-item">
+  <a class="nav-link" href="#">
+    <div class="card" [class.bg-dark]="active" style="width: 18rem;border-width: 2px;">
+      <div class="card-header btn-outline-success">
+        <h5>{{project.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{project.category}} <i class="fa fa-trash" title="delete this!" (click)="deleteProject()"></i></h6>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{project.description}}</p>
+      </div>
+    </div>
+  </a>
+</li>

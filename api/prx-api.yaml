@@ -1,10 +1,10 @@
 swagger: "2.0"
 info:
   description: "Eine kleine Demo für ein mini projektmanaagement"
-  version: "1.0.1"
+  version: "1.0.3"
   title: "Project Viewer"
   contact:
-    email: "robin.seifert@web.de"
+    email: "Robin.seifert83@gmail.com"
 basePath: "/api/v1"
 tags:
 - name: "demo"
